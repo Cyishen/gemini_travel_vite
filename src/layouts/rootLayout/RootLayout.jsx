@@ -5,7 +5,7 @@ import './rootLayout.css'
 
 import { ClerkProvider } from '@clerk/clerk-react'
 import { zhTW } from "@clerk/localizations";
-
+import ToasterContext from "@/lib/ToasterContext";
 
 const PUBLISHABLE_KEY = import.meta.env.VITE_CLERK_PUBLISHABLE_KEY
 
@@ -20,12 +20,13 @@ const RootLayout = () => {
       localization={zhTW}
     >
       <div className="rootLayout">
+        <ToasterContext />
         <Navbar />
 
         <main>
           <Outlet />
         </main>
-
+        
         <Footer />
       </div>
     </ClerkProvider>

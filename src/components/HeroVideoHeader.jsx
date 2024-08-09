@@ -33,7 +33,7 @@ const HeroVideoHeader = () => {
 
   return (
     <section ref={ref} className="h-[100vh] w-full absolute top-0 z-10">
-      <motion.div className="h-full w-full bg-blue-400"
+      <motion.div className="h-full w-full"
         style={{
           scale: scaleVideo,
         }}

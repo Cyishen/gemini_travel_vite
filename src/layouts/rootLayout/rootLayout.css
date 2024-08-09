@@ -1,0 +1,26 @@
+.rootLayout {
+  display: flex;
+  flex-direction: column;
+  position: relative;
+
+  header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    height: 4.3rem;
+    padding: 1rem;
+
+    .logo {
+      display: flex;
+      align-items: center;
+      font-weight: 500;
+      font-size: 1.25rem;
+    }
+  }
+
+  /* main {
+    flex: 1;
+    overflow: hidden;
+    margin-top: 100vh;
+  } */
+}

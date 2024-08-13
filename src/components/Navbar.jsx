@@ -33,6 +33,7 @@ const Navbar = () => {
                 mode="modal"
                 signUpFallbackRedirectUrl="/create"
                 signUpForceRedirectUrl="/create"
+                signInForceRedirectUrl="/create"
               > 
                 <Button size="sm" variant="forNavbarLogin" className="text-md font-normal">
                   登入

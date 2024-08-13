@@ -5,6 +5,7 @@ import { Link } from "react-router-dom"
 
 import { useRef } from "react"
 import { DotLottiePlayer } from "@dotlottie/react-player";
+import { airplaneAmi } from "@/lib"
 
 const Hero = () => {
   const ref = useRef(null)
@@ -91,7 +92,7 @@ const Hero = () => {
                   立即出發
                   <DotLottiePlayer 
                     ref={ref} 
-                    src="/lottie/airplane.lottie"
+                    src={airplaneAmi}
                     className="w-10 h-10 rotate-90" 
                     autoplay 
                   />

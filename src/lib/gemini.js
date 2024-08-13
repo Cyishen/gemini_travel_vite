@@ -23,4 +23,18 @@ const model = genAI.getGenerativeModel({
   safetySetting,
 });
 
-export default model;
+const generationConfig = {
+  temperature: 1,
+  topP: 0.95,
+  topK: 64,
+  maxOutputTokens: 8192,
+  responseMimeType: "application/json",
+};
+
+const chatSession = model.startChat({
+  history: [
+  ],
+  generationConfig
+});
+
+export default chatSession;

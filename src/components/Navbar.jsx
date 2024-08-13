@@ -47,6 +47,10 @@ const Navbar = () => {
             </SignedOut>
 
             <SignedIn>
+              <Link to="/trip">
+                <Button variant="forTryIt" size="sm">紀錄</Button>
+              </Link>
+
               <UserButton />
             </SignedIn>
           </ClerkLoaded>

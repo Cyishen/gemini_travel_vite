@@ -5,7 +5,7 @@ import './rootLayout.css'
 
 import { ClerkProvider } from '@clerk/clerk-react'
 import { zhTW } from "@clerk/localizations";
-import ToasterContext from "@/lib/ToasterContext";
+import ToasterContext from "@/components/ToasterContext";
 
 const PUBLISHABLE_KEY = import.meta.env.VITE_CLERK_PUBLISHABLE_KEY
 
@@ -18,6 +18,7 @@ const RootLayout = () => {
     <ClerkProvider
       publishableKey={PUBLISHABLE_KEY} 
       localization={zhTW}
+      signInForceRedirectUrl="/create"
     >
       <div className="rootLayout">
         <ToasterContext />

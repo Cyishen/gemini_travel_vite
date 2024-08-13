@@ -2,6 +2,7 @@
 @tailwind components;
 @tailwind utilities;
 
+
 @layer base {
   :root {
     --background: 0 0% 100%;
@@ -66,4 +67,24 @@
   body {
     @apply bg-background text-foreground;
   }
+}
+
+.custom-scrollbar {
+  scrollbar-width: thin; 
+  scrollbar-color: rgba(0, 0, 0, 0.2) transparent; 
+}
+
+.custom-scrollbar::-webkit-scrollbar {
+  width: 1px;
+  height: 1px;
+  border-radius: 2px;
+}
+
+.custom-scrollbar::-webkit-scrollbar-thumb {
+  background-color: rgba(0, 0, 0, 0.2); 
+  border-radius: 2px; 
+}
+
+.custom-scrollbar::-webkit-scrollbar-track {
+  background: transparent;
 }

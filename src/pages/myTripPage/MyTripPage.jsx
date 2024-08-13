@@ -31,7 +31,7 @@ const MyTripPage = () => {
   }, [userEmail])
 
   return (
-    <section className="w-full h-[100vh]">
+    <section className="w-full h-full mb-10">
       <Wrapper className='flex flex-col items-center sm:p-10'>
         <div className="h-full sm:p-10 border w-full p-5 rounded-2xl">
           <h2 className="font-bold text-2xl mb-10">想去的行程</h2>

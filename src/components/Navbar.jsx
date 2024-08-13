@@ -48,7 +48,7 @@ const Navbar = () => {
 
             <SignedIn>
               <Link to="/trip">
-                <Button variant="forTryIt" size="sm">紀錄</Button>
+                <Button variant="forTryIt" size="sm">已計劃</Button>
               </Link>
 
               <UserButton />

@@ -40,7 +40,7 @@ const CreatePage = () => {
   }
 
   useEffect(() => {
-    console.log(formDate)
+    // console.log(formDate)
   }, [formDate])
 
   const handleSubmitTrip = async (e) => {
@@ -64,7 +64,7 @@ const CreatePage = () => {
       .replace('{people}', formDate?.People)
       .replace('{budget}', formDate?.Budget)
 
-    console.log(FINAL)
+    // console.log(FINAL)
     const result = await chatSession.sendMessage(FINAL);
     const travelJson = result.response.text();
     // console.log(travelJson)

@@ -32,8 +32,6 @@ const ViewPage = () => {
     }
   }, [id])
 
-  console.log(data)
-
   return (
     <section className="h-full w-full mb-20">
       <Wrapper className='flex flex-col items-center sm:p-10'>

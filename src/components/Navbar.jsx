@@ -5,7 +5,9 @@ import Wrapper from "./Wrapper";
 
 import { useScroll, useMotionValueEvent } from "framer-motion"
 import { useState } from "react"
+import AnimatedBackground from "./AnimatedBg";
 
+const TABS = ['Home', 'Contact'];
 
 const Navbar = () => {
   const { scrollY } = useScroll()
@@ -27,6 +29,30 @@ const Navbar = () => {
         </Link>
 
         <div className="flex items-center justify-center gap-5">
+          <div className='flex flex-row'>
+            <AnimatedBackground
+              defaultValue={TABS[0]}
+              className='rounded-sm border dark:bg-zinc-800'
+              transition={{
+                type: 'spring',
+                bounce: 0.2,
+                duration: 0.3,
+              }}
+              enableHover
+            >
+              {TABS.map((tab, index) => (
+                <button
+                  key={index}
+                  data-id={tab}
+                  type='button'
+                  className={`px-2 py-0.5 ${scrolled ? 'text-white' : 'text-zinc-600 hover:text-zinc-900'} transition-colors duration-300 dark:text-zinc-400 dark:hover:text-zinc-50`}
+                >
+                  {tab}
+                </button>
+              ))}
+            </AnimatedBackground>
+          </div>
+
           <ClerkLoaded>
             <SignedOut>
               <SignInButton

@@ -57,10 +57,29 @@ const HeroVideoHeader = () => {
             opacity: opacityWord,
           }}
         >
-          <h1 className="text-6xl font-extrabold text-white mb-6 text-balance tracking-tight flex sm:w-[70vw] justify-center">
+          <motion.h1 
+            className="text-6xl font-extrabold text-white mb-6 text-balance tracking-tight flex sm:w-[70vw] justify-center"
+            initial={{opacity: 0, y: 75}} 
+            animate={{opacity: 1, y: 0}}
+            transition={{
+              type: "tween",
+              duration: 2,
+            }}
+          >
             輕鬆規劃，立即出發
-          </h1>
-          <p className="text-sm text-white mb-10">您的旅程現在開始</p>
+          </motion.h1>
+          <motion.p 
+            className="text-sm text-white mb-10"
+            initial={{opacity: 0, y: 75}} 
+            animate={{opacity: 1, y: 0}}
+            transition={{
+              type: "tween",
+              duration: 2,
+              delay: 0.1,
+            }}
+          >
+            您的旅程現在開始
+          </motion.p>
 
           <Link to="/create" onMouseEnter={handleHover}>
             <Button size="lg" variant="forVideo" className="gap-5 w-full sm:w-auto">

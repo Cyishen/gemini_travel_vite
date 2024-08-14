@@ -31,9 +31,9 @@ const Navbar = () => {
             <SignedOut>
               <SignInButton
                 mode="modal"
-                signUpFallbackRedirectUrl="/create"
-                signUpForceRedirectUrl="/create"
-                signInForceRedirectUrl="/create"
+                signUpFallbackRedirectUrl="/"
+                signUpForceRedirectUrl="/"
+                signInForceRedirectUrl="/"
               > 
                 <Button size="sm" variant="forNavbarLogin" className="text-md font-normal">
                   登入

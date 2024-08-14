@@ -18,7 +18,7 @@ const RootLayout = () => {
     <ClerkProvider
       publishableKey={PUBLISHABLE_KEY} 
       localization={zhTW}
-      signInForceRedirectUrl="/create"
+      signInForceRedirectUrl="/"
     >
       <div className="rootLayout">
         <ToasterContext />

@@ -40,20 +40,25 @@ const TripList = ( {trip} ) => {
         <p>{trip?.userSelect?.Location?.label}</p>
       </div>
 
-      <div className="flex flex-col gap-1 overflow-x-auto whitespace-nowrap custom-scrollbar">
-        <div className="flex border p-2 rounded-lg gap-3">
+      <div className="flex flex-col gap-1">
+        <div className="flex border p-2 rounded-lg gap-2">
           <PlaneTakeoff />
           <p>天數:</p>
           <p className="">{trip?.userSelect?.Days}</p>
         </div>
 
-        <div className="flex border p-2 rounded-lg gap-3">
-          <UsersRound />
-          <p>人數:</p>
-          <p>{trip?.userSelect?.People}</p>
+        <div className="flex border p-2 rounded-lg gap-2">
+          <div>
+            <UsersRound />
+          </div>
+
+          <div className="flex gap-2 overflow-x-auto whitespace-nowrap custom-scrollbar">
+            <p>人數:</p>
+            <p>{trip?.userSelect?.People}</p>
+          </div>
         </div>
 
-        <div className="flex border p-2 rounded-lg gap-3">
+        <div className="flex border p-2 rounded-lg gap-2">
           <CircleDollarSign />
           <p>預算: </p>
           <p>{trip?.userSelect?.Budget}</p>

@@ -28,7 +28,7 @@ const Navbar = () => {
           Trip
         </Link>
 
-        <div className="flex items-center justify-center gap-5">
+        <div className="flex items-center justify-center gap-3 md:gap-5">
           <div className='flex flex-row'>
             <AnimatedBackground
               defaultValue={TABS[0]}
@@ -67,7 +67,7 @@ const Navbar = () => {
               </SignInButton>
 
               <Link to="/create">
-                <Button size="forTry" variant="forTryIt" className="text-xl font-light">
+                <Button size="forTry" variant="forTryIt" className="text-xl font-light hidden md:block">
                   Try it
                 </Button>
               </Link>

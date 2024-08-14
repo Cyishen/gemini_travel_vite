@@ -27,30 +27,30 @@ const ReHotelCard = ( { hotel } ) => {
   }, [ hotel ])
   
   return (
-    <div className="border rounded-lg shadow-md hover:bg-gray-100">
+    <div className="border rounded-lg shadow-md hover:bg-gray-100 w-[200px] flex-shrink-0">
       <div className="border rounded-t-lg relative overflow-hidden">
         <Link to={'https://www.google.com/maps/search/?api=1&query='+hotel?.HotelName+',' +hotel?.HotelAddress} target={'_blank'}
         >
           <div className="flex w-full min-h-[150px] relative">
             <img src={photoUrl || '/landing.png'} alt="hotelImage" 
-              className="object-cover h-[150px] w-full hover:scale-125 transition-all"
+              className="object-cover w-full h-[150px] hover:scale-125 transition-all"
             />
           </div>
         </Link>
       </div>
 
-      <div className="flex flex-col px-2 pb-2">
+      <div className="flex flex-col w-full px-2 pb-2 overflow-hidden mt-1">
         <div className="flex items-start font-bold text-lg h-14 line-clamp-2">
           {hotel.HotelName}
         </div>
 
-        <div className="font-light text-gray-500 h-14 line-clamp-2">
+        <div className="font-light text-gray-500 h-14 w-ful line-clamp-2 mb-1">
           {hotel.HotelAddress}
         </div>
 
         <div className='flex items-center gap-1'>
           <CircleDollarSign className='h-4 w-4' />
-          <p className="price">平均 NT,{hotel.HotelPrice}</p>
+          <p className="price">平均, {hotel.HotelPrice}</p>
         </div>
 
         <div className='flex items-center gap-1'>

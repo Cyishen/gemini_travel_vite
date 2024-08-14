@@ -1,5 +1,10 @@
 import { peopleAmi, phonepayAmi } from "@/lib"
 
+export const SelectDays = [
+  {id: 1, day: '1'},
+  {id: 2, day: '2'},
+  {id: 3, day: '3'},
+]
 export const SelectPeople = [
   {
     id: 1,

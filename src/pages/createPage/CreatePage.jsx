@@ -1,7 +1,7 @@
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import Wrapper from "@/components/Wrapper"
-import { PROMPT_TW , SelectBudget, SelectPeople } from "@/constants/options";
+import { PROMPT_TW , SelectBudget, SelectPeople, SelectDays } from "@/constants/options";
 import chatSession from "@/lib/gemini";
 
 import { useEffect, useRef, useState } from "react";
@@ -67,7 +67,7 @@ const CreatePage = () => {
     // console.log(FINAL)
     const result = await chatSession.sendMessage(FINAL);
     const travelJson = result.response.text();
-    // console.log(travelJson)
+
     save(travelJson)
     
     setIsLoading(false)
@@ -124,24 +124,39 @@ const CreatePage = () => {
             </div>
 
             {/* OTHER */}
-            <div className="">
+            {/* <div>
               <p className="text-2xl mb-5">天數</p>
               <Input 
                 type="number" 
                 onChange={(e) => handleInputChange('Days', e.target.value)}
               />
+            </div> */}
+
+            <div>
+              <p className="text-2xl mb-5">天數</p>
+
+              <div className="flex gap-3">
+                {SelectDays.map((item) => (
+                  <div key={item.id} 
+                    className={`flex justify-center w-[100px] flex-shrink-0 border py-1 bg-white rounded-md cursor-pointer ${formDate?.Days == item.day &&' border-black' }`}
+                    onClick={() => handleInputChange('Days', item.day)}
+                  >
+                    <p>{item.day}</p>
+                  </div>
+                ))}
+              </div>
             </div>
 
             <div>
               <p className="text-2xl mb-5">預算</p>
               
-              <div className="grid sm:grid-cols-3 gap-5">
+              <div className="flex overflow-x-scroll custom-scrollbar whitespace-wrap gap-3">
                 {SelectBudget.map((item, index) => (
                   <div
                     onMouseEnter={() => handleMoneyHover(index)}  
                     key={item.id}
                     onClick={() => handleInputChange('Budget', item.title)}
-                    className={`flex flex-col border p-4 bg-white rounded-xl cursor-pointer ${formDate?.Budget == item.title &&' border-black' }`}
+                    className={`flex flex-col w-[130px] md:w-[180px] flex-shrink-0 border p-4 bg-white rounded-xl cursor-pointer ${formDate?.Budget == item.title &&' border-black' }`}
                   > 
                     <h2 className="text-2xl font-bold">{item.title}</h2>
 
@@ -160,13 +175,13 @@ const CreatePage = () => {
             <div>
               <p className="text-2xl mb-5">人數</p>
 
-              <div className="grid sm:grid-cols-3 gap-5">
+              <div className="flex overflow-x-scroll custom-scrollbar whitespace-wrap gap-3">
                 {SelectPeople.map((item, index) => (
                   <div
                     onMouseEnter={() => peopleIconHover(index)}   
                     key={item.id} 
                     onClick={() => handleInputChange('People', item.people)}
-                    className={`flex flex-col border p-4 bg-white rounded-xl cursor-pointer ${formDate?.People == item.people && 'border-black' }`}
+                    className={`flex flex-col w-[130px] md:w-[180px] flex-shrink-0 border p-4 bg-white rounded-xl cursor-pointer ${formDate?.People == item.people && 'border-black' }`}
                   > 
                     <h2 className="text-2xl font-bold">{item.title}</h2>
 

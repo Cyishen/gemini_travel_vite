@@ -1,4 +1,4 @@
-import { Button } from "./ui/button"
+// import { Button } from "./ui/button"
 
 import { motion, useScroll, useTransform } from "framer-motion"
 import { useRef } from "react"
@@ -81,7 +81,23 @@ const HeroVideoHeader = () => {
             您的旅程現在開始
           </motion.p>
 
-          <Link to="/create" onMouseEnter={handleHover}>
+          <Link 
+            to="/create" 
+            onMouseEnter={handleHover}
+          >
+            <div className="flex items-center justify-center mx-auto px-10 border-2 border-sky-400 bg-sky-400 hover:bg-transparent hover:text-sky-400 w-fit">
+              <p className="font-bold">立即出發</p>
+
+              <DotLottiePlayer 
+                  ref={lottieRef} 
+                  src="/lottie/airplane.lottie"
+                  className="w-10 h-10 rotate-90" 
+                  autoplay 
+                />
+            </div>
+          </Link>
+
+          {/* <Link to="/create" onMouseEnter={handleHover}>
             <Button size="lg" variant="forVideo" className="gap-5 w-full sm:w-auto">
               立即出發
               <DotLottiePlayer 
@@ -91,7 +107,7 @@ const HeroVideoHeader = () => {
                 autoplay 
               />
             </Button>
-          </Link>
+          </Link> */}
         </motion.div>
       </div>
     </section>

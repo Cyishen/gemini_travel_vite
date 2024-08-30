@@ -1,5 +1,5 @@
 import { Button } from "@/components/ui/button";
-import { Input } from "@/components/ui/input";
+
 import Wrapper from "@/components/Wrapper"
 import { PROMPT_TW , SelectBudget, SelectPeople, SelectDays } from "@/constants/options";
 import chatSession from "@/lib/gemini";
@@ -15,6 +15,7 @@ import { SignedIn, SignedOut, SignInButton, useUser } from "@clerk/clerk-react";
 import { doc, setDoc } from "firebase/firestore"; 
 import { db } from "@/lib/firebaseDb";
 import { useNavigate } from "react-router-dom";
+// import { saveTripData } from "@/lib/models/work.model";
 
 const CreatePage = () => {
   const existingUser = useUser()
@@ -85,6 +86,15 @@ const CreatePage = () => {
 
     navigate('/create/' + dotId)
   }
+
+  // const saveDemo = async (tripData) => {
+  //   const dotId = Date.now().toString();
+  //   const existingUserEmail = existingUser?.user?.emailAddresses[0]?.emailAddress;
+
+  //   await saveTripData(tripData, formDate, existingUserEmail, dotId);
+
+  //   navigate('/create/' + dotId);
+  // };
 
   const handleMoneyHover = (index) => {
     if (refs.current[index] === null) return;

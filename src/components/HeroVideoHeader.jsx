@@ -66,7 +66,7 @@ const HeroVideoHeader = () => {
               duration: 2,
             }}
           >
-            輕鬆規劃，立即出發
+            輕鬆規劃，立即出發!
           </motion.h1>
           <motion.p 
             className="text-sm text-white mb-10"
